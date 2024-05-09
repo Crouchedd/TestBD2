@@ -1,67 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style type="text/css">
-            body {
-                background-image: url("./test1.jpg");
-                overflow: none;
-            }
-            .chrome {
-                max-width: 800px;
-                margin: 50px auto;
-                color: white;
-                text-align: center;
-                position: relative;
-                padding-bottom: 30vh; /* Space for text and image */
-            }
-            h1 {
-                font-size: 7vh;
-            }
-            h2 {
-                font-size: 20vh;
-                margin-top: 0.5em;
-                margin-bottom: 0; /* Reduce space below h2 */
-            }
-            h3 {
-                font-size: 5vh; /* Smaller than h2 but readable */
-                color: #ccc;
-                margin-top: 10px; /* Reduced space from h2 */
-            }
-            .img-container {
-                width: 100%; /* Full width of the container */
-                text-align: center;
-                position: absolute; /* Positioned at the bottom of .chrome */
-                bottom: 0;
-            }
-            img {
-                max-width: 100%; /* Image conforms to container size */
-            }
-            @keyframes blink_effect {
-                0%, 50% { visibility: hidden; }
-                100% { visibility: visible; }
-            }
-            blink {
-                animation: 2s linear infinite blink_effect;
-            }
-            .turq { color: #6bbbb0; }
-            .yell { color: #d7d859; }
-            .pink { color: #bc7192; }
-            .blue { color: #498fee; }
-        </style>
-    </head>
-    <body>
-        <div class="chrome">
-            <h1>
- <span class="turq">I</span><span class="yell">s</span> <span class="pink">t</span><span class="blue">o</span><span class="turq">d</span><span class="yell">a</span><span class="pink">y</span>
-                <span class="blue">t</span><span class="turq">h</span><span class="yell">e</span> <span class="pink">P</span><span class="blue">a</span><span class="turq">u</span><span class="yell">l</span><span class="pink">a</span><span class="blue">'</span><span class="turq">s</span>
-		<span class="yell">B</span><span class="pink">i</span><span class="blue">r</span><span class="turq">t</span><span class="yell">h</span><span class="pink">d</span><span class="blue">a</span><span class="turq">y</span><span class="yell">?</span>
-                <span class="yell">?</span>
-            </h1>
-            <h2><blink>NO</blink></h2>
-            <h3>Come back for hints and clues.</h3>
-            <div class="img-container">
-                <img src="unlit-candles.png" />
-            </div>
+<head>
+    <style type="text/css">
+        body {
+            background-image: url("./test1.jpg");
+            overflow: none;
+        }
+        .chrome {
+            max-width: 800px;
+            margin: 50px auto;
+            color: white;
+            text-align: center;
+            position: relative;
+            padding-bottom: 30vh; /* Ensure there is enough space for the image below the text */
+        }
+        h1 {
+            font-size: 7vh;
+        }
+        h2 {
+            font-size: 20vh;
+            margin-top: 0.5em;
+            margin-bottom: 0; /* Reduce space below h2 */
+        }
+        h3 {
+            font-size: 3vh; /* Smaller text for clues */
+            color: #ccc;
+            margin-top: 10px; /* Reduced space from h2 */
+            text-align: center;
+            padding: 0 20px; /* Padding for better text alignment */
+        }
+		.deep-blue {
+    		color: rgba(41, 88, 143, 0.5); /* #29588f color with 50% transparency */
+		}
+
+        }
+        .turq { color: #6bbbb0; }
+        .yell { color: #d7d859; }
+        .pink { color: #bc7192; }
+        .blue { color: #498fee; }
+        .input-container, .result {
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .img-container {
+            width: 100%;
+            text-align: center;
+            position: relative; /* Adjusted position */
+            margin-top: 20px; /* Add some margin to push it below the input */
+            z-index: -1; /* Send to back */
+        }
+        img {
+            max-width: 100%;
+        }
+        @keyframes blink_effect {
+            0%, 50% { visibility: hidden; }
+            100% { visibility: visible; }
+        }
+        blink {
+            animation: 2s linear infinite blink_effect;
+        }
+    </style>
+</head>
+<body>
+    <div class="chrome">
+        <h1>
+            <span class="turq">I</span><span class="yell">s</span> <span class="pink">t</span><span class="blue">o</span><span class="turq">d</span><span class="yell">a</span><span class="pink">y</span>
+            <span class="blue">t</span><span class="turq">h</span><span class="yell">e</span> <span class="pink">P</span><span class="blue">a</span><span class="turq">u</span><span class="yell">l</span><span class="pink">a</span><span class="blue">'</span><span class="turq">s</span>
+            <span class="yell">B</span><span class="pink">i</span><span class="blue">r</span><span class="turq">t</span><span class="yell">h</span><span class="pink">d</span><span class="blue">a</span><span class="turq">y</span><span class="yell">?</span>
+        </h1>
+        <h2><blink>NO</blink></h2>
+        <h3 class="clues">
+            Clues://RearrangeNumbers<br>
+            - More than sight, a deeper sense guides her. <br>
+            <span class="deep-blue">23.9.19.4.15.13</span><br>            
+            - Unwavering faithfulness to her companion. <br>
+            <span class="deep-blue">12.15.25.1.12.20.25</span><br>
+            - Her presence is often felt before it is heard. <br>
+            <span class="deep-blue">19.9.12.5.14.3.5</span><br>
+	    - Masters of the sky wheather the sun has set.<br>
+            <span class="deep-blue">14.9.7.8.20.6.12.9.7.8.20</span><br>
+            - Her primary role beyond fellowship. <br>
+            <span class="deep-blue">12.5.20.20.5.18.3.1.18.18.9.5.18</span><br>
+        </h3>
+        <div class="input-container">
+            <input type="text" id="userGuess" placeholder="Enter your guess" />
+            <button onclick="checkGuess()">Submit</button>
         </div>
-    </body>
+        <div class="result" id="result"></div>
+        <div class="img-container">
+            <img src="unlit-candles.png" />
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function checkGuess() {
+            var userInput = document.getElementById('userGuess').value;
+            var correctAnswer1 = "hedwig"; // Predefined text (lowercase)
+            var correctAnswer2 = "Hedwig"; // Predefined text (capitalized)
+            var resultText = (userInput === correctAnswer1 || userInput === correctAnswer2) ? "Yess! let me know you've completed it." : "No";
+            document.getElementById('result').textContent = resultText;
+        }
+    </script>
+</body>
 </html>
