@@ -1,73 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You n Me</title>
-    <link rel="stylesheet" href="partner.css">
+<html>
+    <head>
+        <style type="text/css" >
+            body{
+/*                 background-image: url("./images/wood-texture-bg.jpg"); */
+                background-image: url("./images/red-wallpaper-200.jpg");
+                overflow: none;
+            }
+           
+            .chrome {
+	/*
+	                background-image: url("./images/iphone2.png");
+	                background-repeat: no-repeat;
+	*/
+/*
+                width: 394px;
+                height: 790px;
+                background-size: cover;
+                margin: 100px auto;
+                position: relative;
+*/
+            }
+            .chrome {
+	            max-width: 90%;
+                max-width: 800px;
+/*                 height: 948px; */
+                margin: 120px auto;
+                color: white;
+                
+                text-align: center;
+                margin: 50px auto;
 
-    <button tabindex="-1" id="bocchi2">(no)</button>
-    <script>
-        const button2 = document.getElementById('bocchi2');
-        let left = 40;
-        button2.addEventListener('mouseover', function() {
-          if(left == 40){
-            left = 35;
-          }else{
-            left = 40;
-          }
-          this.style.left = left + '%';
-        });
-        if (window.matchMedia("(max-width: 700px)").matches){
-          let left = 30;
-          button2.addEventListener('mouseenter', function() {
-          if(left == 30){
-            left = 15;
-          }else{
-            left = 30;
-          }
-          this.style.left = left + '%';
-        });
-        }
-        </script>
-        
+            }
+            
+            h1 {
+	            font-size: 7vh;
+            }
+            
+            h2 {
+	            font-size: 20vh;
+	            margin-top: 0.5em;
+            }
+            
+            .img-container {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+	        	margin: 0 auto;
+	        	width: 100vw;
+	        	text-align: center;
+	        	z-index: 0;
+	        	height: 25vh;
+	        	max-height: 400px
+            }
+            
+            img {
+	            max-width: 1000px;
+	            display: inline-block;
+				position:absolute;
+	        	bottom: 0;   
+	        	left: calc(50% - 10px); 
+	        	transform: translate(-50%,25%);
+            }
+            
+            blink {
+			  animation: 2s linear infinite condemned_blink_effect;
+			}
+			
+			@keyframes condemned_blink_effect {
+			  0% {
+			    visibility: hidden;
+			  }
+			  50% {
+			    visibility: hidden;
+			  }
+			  100% {
+			    visibility: visible;
+			  }
+			}
 
-</head>
+			.chrome .turq {
+				color: #6bbbb0;
+			}
+				
+			.chrome .yell {
+				color: #d7d859;
+			}
+			
+			.chrome .pink {
+				color: #bc7192;
+			}
+			
+			.chrome .blue {
+				color: #498fee;
+			}
+
+
+        </style>
+    </head>
 <body>
-    
-<p class="heading">Hey Paula, Can we hang out on Saturday?</p>
-<img class="pic" src="https://media.tenor.com/zGm5acSjHCIAAAAM/cat-begging.gif" alt="">
-<title>Bocchi</title>
+    <div class="chrome"><h1><span class="turq">I</span><span class="yell">s</span> <span class="pink">t</span><span class="blue">o</span><span class="turq">d</span><span class="yell">a</span><span class="pink">y</span> <span class="blue">t</span><span class="turq">h</span><span class="yell">e</span> <span class="pink">T</span><span class="blue">a</span><span class="turq">s</span><span class="yell">k</span><span class="pink">m</span><span class="blue">a</span><span class="turq">s</span><span class="yell">t</span><span class="pink">e</span><span class="blue">r'</span><span class="turq">s</span> <span class="yell">b</span><span class="pink">i</span><span class="blue">r</span><span class="turq">t</span><span class="yell">h</span><span class="pink">d</span><span class="blue">a</span><span class="turq">y</span><span class="yell">?</span></h1>
+    	<h2><blink>NO</blink></h2>
+    </div>
+    	<div class="img-container">
+			<img src="images/unlit-candles.png" />
+    	</div>
+</body>
+<script type="text/javascript">
 
+var q = new Date();
+var m = q.getMonth()+1;
+var d = q.getDay();
+var y = q.getFullYear();
 
+var date = new Date(y,m,d);
 
+mydate=new Date('2023-05-14');
+console.log(date);
+console.log(mydate)
 
-    <button id="bocchi1" onclick="openModal()">YESSs!</button>
-
-
-    <dialog id="dialog">
-        <img  class="pic1" src="pic.jpg" width="210px" height="250px" alt="">
-        <br/>
-        <center><p>YAYY THANK U ^^ hehe </p></center>
-        
-    <button onclick="closeModal()" class="right">close ><</3></button>
-    </dialog>
-
-
-<script>
-    var dailog = document.getElementById("dialog"); 
-
-function openModal() { 
-    
-      dailog.showModal();
-} 
-
-function closeModal() { 
-    dailog.close(); 
+/*
+if(date>mydate)
+{
+    alert("greater");
 }
+else
+{
+    alert("smaller")
+}
+*/
+
 </script>
 
-
-</body>
 </html>
+
+
+
