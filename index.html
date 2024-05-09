@@ -1,139 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style type="text/css" >
-            body{
-/*                 background-image: url("./wood-texture-bg.jpg"); */
-                background-image: url("./test1.jpg");
+        <style type="text/css">
+            body {
+                background-image: url("./images/test1.jpg");
                 overflow: none;
             }
-           
             .chrome {
-	/*
-	                background-image: url("./iphone2.png");
-	                background-repeat: no-repeat;
-	*/
-/*
-                width: 394px;
-                height: 790px;
-                background-size: cover;
-                margin: 100px auto;
-                position: relative;
-*/
-            }
-            .chrome {
-	            max-width: 90%;
                 max-width: 800px;
-/*                 height: 948px; */
-                margin: 120px auto;
-                color: white;
-                
-                text-align: center;
                 margin: 50px auto;
-
+                color: white;
+                text-align: center;
+                position: relative;
+                padding-bottom: 30vh; /* Add space at the bottom for the text and image */
             }
-            
             h1 {
-	            font-size: 7vh;
+                font-size: 7vh;
             }
-            
             h2 {
-	            font-size: 20vh;
-	            margin-top: 0.5em;
+                font-size: 20vh;
+                margin-top: 0.5em;
             }
-            
+            h3 {
+                font-size: 5vh; /* Smaller than h2 but still large enough to be readable */
+                color: #ccc; /* Lighter color for subtlety */
+                margin-top: 20px; /* Space from the element above */
+            }
             .img-container {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-	        	margin: 0 auto;
-	        	width: 100vw;
-	        	text-align: center;
-	        	z-index: 0;
-	        	height: 25vh;
-	        	max-height: 400px
+                width: 100%; /* Full width of the container */
+                text-align: center;
+                position: absolute; /* Position at the bottom of the .chrome container */
+                bottom: 0;
             }
-            
             img {
-	            max-width: 1000px;
-	            display: inline-block;
-				position:absolute;
-	        	bottom: 0;   
-	        	left: calc(50% - 10px); 
-	        	transform: translate(-50%,25%);
+                max-width: 100%; /* Ensure the image is not larger than the container */
             }
-            
+            @keyframes blink_effect {
+                0%, 50% { visibility: hidden; }
+                100% { visibility: visible; }
+            }
             blink {
-			  animation: 2s linear infinite condemned_blink_effect;
-			}
-			
-			@keyframes condemned_blink_effect {
-			  0% {
-			    visibility: hidden;
-			  }
-			  50% {
-			    visibility: hidden;
-			  }
-			  100% {
-			    visibility: visible;
-			  }
-			}
-
-			.chrome .turq {
-				color: #6bbbb0;
-			}
-				
-			.chrome .yell {
-				color: #d7d859;
-			}
-			
-			.chrome .pink {
-				color: #bc7192;
-			}
-			
-			.chrome .blue {
-				color: #498fee;
-			}
-
-
+                animation: 2s linear infinite blink_effect;
+            }
+            .turq { color: #6bbbb0; }
+            .yell { color: #d7d859; }
+            .pink { color: #bc7192; }
+            .blue { color: #498fee; }
         </style>
     </head>
-<body>
-    <div class="chrome"><h1><span class="turq">I</span><span class="yell">s</span> <span class="pink">t</span><span class="blue">o</span><span class="turq">d</span><span class="yell">a</span><span class="pink">y</span> <span class="blue">t</span><span class="turq">h</span><span class="yell">e</span> <span class="pink">P</span><span class="blue">a</span><span class="turq">u</span><span class="yell">l</span><span class="pink">a</span><span class="blue">'</span><span class="turq">s</span> <span class="yell">B</span><span class="pink">i</span><span class="blue">r</span><span class="turq">t</span><span class="yell">h</span><span class="pink">d</span><span class="blue">a</span><span class="turq">y</span><span class="yell">?</span></h1>
-    	<h2><blink>NO</blink></h2>
-    </div>
-    	<div class="img-container">
-			<img src="/unlit-candles.png" />
-    	</div>
-</body>
-<script type="text/javascript">
-
-var q = new Date();
-var m = q.getMonth()+1;
-var d = q.getDay();
-var y = q.getFullYear();
-
-var date = new Date(y,m,d);
-
-mydate=new Date('2023-05-14');
-console.log(date);
-console.log(mydate)
-
-/*
-if(date>mydate)
-{
-    alert("greater");
-}
-else
-{
-    alert("smaller")
-}
-*/
-
-</script>
-
+    <body>
+        <div class="chrome">
+            <h1>
+                <span class="turq">I</span><span class="yell">s</span> <span class="pink">t</span><span class="blue">o</span><span class="turq">d</span><span class="yell">a</span><span class="pink">y</span>
+                <span class="blue">t</span><span class="turq">h</span><span class="yell">e</span> <span class="pink">P</span><span class="blue">a</span><span class="turq">u</span><span class="yell">l</span><span class="pink">a</span><span class="blue">'</span><span class="turq">s</span>
+		<span class="yell">B</span><span class="pink">i</span><span class="blue">r</span><span class="turq">t</span><span class="yell">h</span><span class="pink">d</span><span class="blue">a</span><span class="turq">y</span><span class="yell">?</span>
+            </h1>
+            <h2><blink>NO</blink></h2>
+            <h3>Come back for hints and clues.</h3>
+            <div class="img-container">
+                <img src="images/unlit-candles.png" />
+            </div>
+        </div>
+    </body>
 </html>
-
-
-
